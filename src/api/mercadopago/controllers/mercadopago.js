@@ -11,24 +11,27 @@ const client = new MercadoPagoConfig({
 module.exports = {
   exampleAction: async (ctx, next) => {
      try {
+
       const data = ctx.request.body;
+      console.log(data)
       const body = {
         items: [
           {
-            title: data.title,
-            quantity: Number(data.quantity),
-            unit_price: Number(data.price),
+            title: data[0].title,
+            quantity: Number(data[0].quantity),
+            unit_price: Number(data[0].price),
             currency_id: "COP",
           },
         ],
         back_urls: {
-          success: "http://localhost:5173",
-          failure: "http://localhost:5173",
-          pending: "http://localhost:5173",
+          success: "http://localhost:3000",
+          failure: "http://localhost:3000",
+          pending: "http://localhost:3000",
         },
         auto_return: "approved",
       };
       const preference = new Preference(client);
+      console.log(`body enviado a mercadopago: ${JSON.stringify(body)}`);
       const result = await preference.create({ body });
       ctx.body = {
         id:result.id
