@@ -12,8 +12,8 @@ module.exports = {
   exampleAction: async (ctx, next) => {
      try {
 
-      const data = ctx.request.body;
-      console.log(data)
+      const data = ctx.request.body?.products;
+      console.log(`data recibida: `,data)
       const body = {
         items: [
           {
