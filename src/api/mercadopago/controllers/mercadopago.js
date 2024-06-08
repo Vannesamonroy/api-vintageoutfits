@@ -35,6 +35,16 @@ module.exports = {
       const preference = new Preference(client);
       console.log(`body enviado a mercadopago: ${JSON.stringify(body)}`);
       const result = await preference.create({ body });
+      const orderData = {
+        nombre: order.name,
+        telefono: order.phone,
+        direccion: order.address,
+        productos: body.items,
+        id_trasacion: result.id,
+      }
+      const savedOrder = await strapi.services.order.create(orderData);
+      console.log(`savedOrder:`,savedOrder);
+
       ctx.body = {
         id:result.id
        };
