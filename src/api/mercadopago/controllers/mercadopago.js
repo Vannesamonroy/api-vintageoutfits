@@ -40,7 +40,7 @@ module.exports = {
         telefono: order.phone,
         direccion: order.address,
         productos: body.items,
-        id_trasacion: result.id,
+        id_transaction_mercado_pago: result.id,
       }
       const savedOrder = await strapi.services.order.create(orderData);
       console.log(`savedOrder:`,savedOrder);
