@@ -24,9 +24,9 @@ module.exports = {
           },
         ],
         back_urls: {
-          success: "http://localhost:3000",
-          failure: "http://localhost:3000",
-          pending: "http://localhost:3000",
+          success: "https://frontend-vintage-outfits-9vsnqiplu-vannesamonroys-projects.vercel.app/",
+          failure: "https://frontend-vintage-outfits-9vsnqiplu-vannesamonroys-projects.vercel.app/",
+          pending: "https://frontend-vintage-outfits-9vsnqiplu-vannesamonroys-projects.vercel.app/",
         },
         auto_return: "approved",
       };
