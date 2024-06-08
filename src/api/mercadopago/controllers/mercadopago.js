@@ -13,7 +13,9 @@ module.exports = {
      try {
 
       const data = ctx.request.body?.products;
+      const order = ctx.request.body?.order;
       console.log(`data recibida: `,data)
+      console.log(`order recibida: `,order)
       const body = {
         items: [
           {
