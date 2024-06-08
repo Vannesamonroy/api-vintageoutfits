@@ -43,7 +43,7 @@ module.exports = {
         id_transaction_mercado_pago: result.id,
       }
       // const savedOrder = await strapi.services.order.create(orderData);
-      console.log(`savedOrder:`,orderData);
+      console.log(`savedOrder: ${JSON.stringify(orderData)}`);
 
       ctx.body = {
         id:result.id
